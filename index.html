@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>關於我 - Neo</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1 class="animated-header">你好，我是 Neo</h1>
+        
+        <div class="header-controls">
+            <div id="current-time"></div> <div class="color-control-wrapper">
+                <label for="bgColorSlider">背景顏色：</label>
+                <input type="range" id="bgColorSlider" min="0" max="100" value="0">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro animated-section">
+            <img src="your-photo.jpg" alt="你的照片" class="profile-photo">
+            <h2>關於我</h2>
+            <p>
+                嗨，謝謝你來到我的個人介紹頁面！<br>
+                我叫 Neo，一位熱愛**騎車**的實踐家。
+                我對**探索新事物、學習新的技能**充滿熱情，喜歡將想法付諸實踐。
+            </p>
+        </section>
+
+        <section class="skills animated-section">
+            <h2>我的技能</h2>
+            <ul class="skills-list">
+                <li data-image="keyboard_assembly.jpg">組裝鍵盤</li>
+                <li data-image="rubiks_cube.jpg">解魔術方塊</li>
+                <li data-image="video_editing.jpg">剪輯影片</li>
+                <li data-image="valorant.jpg">打瓦</li>
+                <li data-image="riding.jpg">騎車 (我的最愛！)</li>
+                <li id="show-more-skills-btn" class="show-more-btn">其他技能 ▼</li>
+            </ul>
+
+            <ul id="more-skills-list" class="skills-list hidden-skills">
+                <li data-image="photography.jpg">攝影</li>
+                <li data-image="cooking.jpg">烹飪</li>
+                <li data-image="coding.jpg">程式設計 (入門)</li>
+                <li>寫作</li>
+                <li>釣魚</li>
+            </ul>
+
+            <div id="skill-image-container">
+                <img id="skill-image" src="IMG_4203.jpg" >
+            </div>
+        </section>
+
+        <section class="contact animated-section">
+            <h2>聯絡我</h2>
+            <p>
+                如果你想跟我交流，歡迎透過以下方式：<br>
+                Email: <a href="mailto:chenneo0721@gmail.com" class="animated-link">[Email]</a><br>
+                LinkedIn: <a href="https://www.youtube.com/@neo92926" target="_blank" class="animated-link">[yt]</a><br>
+                GitHub: <a href="https://github.com/chenneo0721" target="_blank" class="animated-link">[GitHub ]</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Neo. 版權所有。</p>
+    </footer>
+
+    <button onclick="topFunction()" id="myBtn" title="回到頂部">↑ 回到頂部</button>
+
+    <script src="script.js"></script> </body>
+</html>

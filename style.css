@@ -1,0 +1,331 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* 初始背景色，JavaScript 會動態修改 */
+    color: #333; /* 初始文字顏色，JavaScript 會動態修改 */
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out; /* 背景和文字顏色平滑過渡 */
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    overflow: hidden; /* 確保動畫不會超出 header 範圍 */
+}
+
+.animated-header {
+    animation: slideInDown 1s ease-out; /* 標題滑入動畫 */
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 時間顯示與拉桿的共同容器樣式 */
+.header-controls {
+    display: flex; /* 使用 Flexbox 讓內容並排 */
+    flex-direction: column; /* 預設垂直堆疊 */
+    align-items: center; /* 水平居中 */
+    gap: 15px; /* 元素之間的間距 */
+    margin-top: 15px;
+    padding: 0 20px; /* 左右內邊距 */
+}
+
+@media (min-width: 768px) {
+    .header-controls {
+        flex-direction: row; /* 寬螢幕時並排 */
+        justify-content: center; /* 水平居中 */
+    }
+}
+
+
+/* Main Content Area */
+main {
+    padding: 20px;
+    max-width: 960px;
+    margin: 20px auto;
+    background-color: #fff; /* 初始主內容區背景色 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 初始陰影 */
+    border-radius: 8px;
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, color 0.5s ease-in-out; /* 平滑過渡 */
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden; /* 確保動畫不會超出 section 範圍 */
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+.animated-section {
+    animation: fadeInUp 1s ease-out; /* 區塊淡入動畫 */
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h2 {
+    color: #007bff; /* 初始標題顏色 */
+    border-bottom: 2px solid #007bff; /* 初始標題底線顏色 */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: color 0.5s ease-in-out, border-color 0.5s ease-in-out; /* 平滑過渡 */
+}
+
+/* Profile Photo */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px auto;
+    border: 3px solid #007bff;
+    transition: transform 0.3s ease-in-out, border-color 0.5s ease-in-out; /* 添加 transform 和 border-color 的過渡效果 */
+}
+
+/* List Styles (for skills) */
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+ul li {
+    background-color: #e9ecef; /* 初始技能項目背景色 */
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #555; /* 初始技能項目文字顏色 */
+    font-weight: bold;
+    opacity: 0; /* 預設透明，用於滾動動畫 */
+    transform: translateY(20px); /* 預設向下位移，用於滾動動畫 */
+    
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out; /* 移除 font-size 過渡，保留 transform */
+    transform: scale(1); /* 初始縮放大小 */
+    cursor: pointer; /* 鼠標顯示為手型 */
+}
+
+/* 當滑鼠懸停在技能標籤上時的縮放效果 */
+ul li:hover {
+    transform: scale(1.1); /* 懸停時放大 1.1 倍 */
+    background-color: #007bff; /* 懸停時改變背景色 */
+    color: #fff; /* 懸停時改變文字色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 懸停時增加陰影 */
+}
+
+/* Link Styles */
+a {
+    color: #007bff; /* 初始連結顏色 */
+    text-decoration: none;
+    transition: color 0.5s ease-in-out, transform 0.3s ease-in-out; /* 平滑過渡 */
+}
+
+.animated-link:hover {
+    transform: scale(1.1); /* 連結懸停時放大 */
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9em;
+}
+
+/* 當前時間的樣式 */
+#current-time {
+    color: #fff;
+    font-size: 0.9em;
+    white-space: nowrap; /* 防止時間換行 */
+}
+
+/* 回到頂部按鈕的樣式 */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#myBtn:hover {
+    background-color: #0056b3;
+}
+
+/* 背景顏色控制拉桿的容器樣式 */
+.color-control-wrapper {
+    padding: 5px 15px; /* 減小內邊距 */
+    background-color: rgba(255, 255, 255, 0.1); /* 簡潔的半透明背景 */
+    border-radius: 8px;
+    box-shadow: none; /* 移除陰影，使其更輕盈 */
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* 平滑過渡 */
+    animation: fadeIn 1s ease-out; /* 淡入動畫 */
+    display: flex; /* 使用 Flexbox 讓 label 和 input 並排 */
+    align-items: center; /* 垂直居中對齊 */
+    gap: 10px; /* 元素間距 */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.color-control-wrapper label {
+    margin-bottom: 0; /* 移除底部外邊距 */
+    font-weight: normal; /* 讓字體不那麼粗 */
+    color: #fff; /* 標籤文字顏色變成白色 */
+    white-space: nowrap; /* 防止文字換行 */
+    transition: color 0.5s ease-in-out; /* 平滑過渡 */
+}
+
+/* 拉桿 (input type="range") 的基本樣式 */
+#bgColorSlider {
+    -webkit-appearance: none;
+    width: 150px; /* 縮小拉桿寬度 */
+    height: 6px; /* 縮小拉桿高度 */
+    background: linear-gradient(to right, #ffffff, #000000); /* 完整的顏色值 */
+    border-radius: 3px; /* 縮小圓角 */
+    outline: none;
+    opacity: 0.9;
+    transition: opacity .2s;
+}
+
+/* 鼠標懸停時的透明度 */
+#bgColorSlider:hover {
+    opacity: 1;
+}
+
+/* 拉桿的滑塊 (Thumb) 樣式 - Webkit browsers (Chrome, Safari, Edge) */
+#bgColorSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px; /* 縮小滑塊寬度 */
+    height: 16px; /* 縮小滑塊高度 */
+    border-radius: 50%;
+    background: #007bff;
+    cursor: grab;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* 縮小陰影 */
+    border: 1px solid #fff; /* 縮小白色邊框 */
+}
+
+/* 拉桿的滑塊 (Thumb) 樣式 - Firefox */
+#bgColorSlider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: grab;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    border: 1px solid #fff;
+}
+
+/* 拉桿的滑塊 (Thumb) 樣式 - IE */
+#bgColorSlider::-ms-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: grab;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    border: 1px solid #fff;
+}
+
+/* 更多技能按鈕的樣式 */
+.show-more-btn {
+    background-color: #6c757d; /* 按鈕的背景色 */
+    color: #fff; /* 按鈕文字顏色 */
+    cursor: pointer; /* 鼠標顯示為手型 */
+    transition: background-color 0.3s ease-in-out; /* 背景色過渡效果 */
+}
+
+.show-more-btn:hover {
+    background-color: #5a6268; /* 懸停時的背景色 */
+    transform: scale(1.05); /* 懸停時輕微放大 */
+}
+
+/* 隱藏的技能列表樣式 */
+.hidden-skills {
+    max-height: 0; /* 預設高度為 0，實現隱藏效果 */
+    overflow: hidden; /* 隱藏超出部分 */
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* 過渡效果 */
+    opacity: 0; /* 預設透明 */
+    flex-wrap: wrap; /* 保持 flex-wrap */
+    margin-top: 10px; /* 與上方列表的間距 */
+}
+
+/* 顯示時的技能列表樣式 */
+.hidden-skills.show {
+    max-height: 200px; /* 顯示時的最大高度，根據內容調整 */
+    opacity: 1; /* 顯示時完全不透明 */
+}
+
+/* 隱藏的技能列表中的 li 項目，預設不執行滾動動畫 */
+.hidden-skills li {
+    opacity: 1; /* 預設為 1，因為父級已經控制了顯示 */
+    transform: translateY(0); /* 預設為 0 */
+    animation: none !important; /* 取消所有 CSS 動畫，避免衝突 */
+}
+
+
+/* 技能圖片容器樣式 */
+#skill-image-container {
+    margin-top: 20px;
+    text-align: center;
+    opacity: 0; /* 預設隱藏 */
+    transform: translateY(20px); /* 預設向下位移 */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* 淡入和位移動畫 */
+    height: 150px; /* 設定一個初始高度，避免閃爍 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#skill-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* 確保圖片完整顯示 */
+}
